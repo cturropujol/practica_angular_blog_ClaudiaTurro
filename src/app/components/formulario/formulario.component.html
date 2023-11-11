@@ -1,1 +1,28 @@
-<p>formulario works!</p>
+<form [formGroup]="newPost" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">Categoria</label>
+        <input type="text" formControlName="categoria">
+    </div>
+    <div>
+        <label for="">Fecha</label>
+        <input type="text" formControlName="fecha">
+    </div>
+    <div>
+        <label for="">Autor</label>
+        <input type="text" formControlName="autor">
+    </div>
+    <div>
+        <label for="">Titulo</label>
+        <input type="text" formControlName="titulo">
+    </div>
+    <div>
+        <label for="">Imagen</label>
+        <input type="text" formControlName="imagen">
+    </div>
+    <div>
+        <label for="">Texto</label>
+        <input type="text" formControlName="texto">
+    </div>
+    <input class="btn btn-info" type="submit" value="Publicar post">
+
+</form>
