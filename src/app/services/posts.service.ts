@@ -82,10 +82,11 @@ export class PostsService {
   }
 
   createPost(post: Post){
-
+    this.postsArr.push(post);
   }
 
-  getByCategoria(){
+  getByCategoria(categoria: string){
+    return this.postsArr.filter((post) => {post.categoria === categoria})
 
   }
 }
