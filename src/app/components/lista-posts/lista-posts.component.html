@@ -1,1 +1,18 @@
-<p>lista-posts works!</p>
+<div>
+    <select class="form-select form-select-sm" (change)="filtrarContinente($event)">
+        <option value="filtrar por categoria">Filtrar por categoria</option>
+        <option *ngFor="let categoria of arrCategorias">{{categoria}}</option>
+        
+    </select>
+</div>
+<article *ngFor="let post of arrPosts">
+    <figure>
+        <img [src]="post.imagen">
+    </figure>
+    <p>{{post.fecha}}</p>
+    <p>{{post.autor}}</p>
+    <h3>{{post.titulo}}</h3>
+    <p>{{post.texto}}</p>
+    <p>{{post.categoria}}</p>
+
+</article>
