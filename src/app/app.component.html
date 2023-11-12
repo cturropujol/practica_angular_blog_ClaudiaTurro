@@ -1,12 +1,43 @@
 <div>
- <nav>
-  <ul>
-    <li [routerLink]="['/posts']">Posts</li>
-    <li [routerLink]="['/blog', 'new']">Nuevo Post</li>
+<nav class="hero">
+  <ul class="nav justify-content-end">
+    <li class="nav" [routerLink]="['/posts']">
+      Posts
+    </li>
+    <li> | </li>
+    <li class="nav" [routerLink]="['/blog', 'new']">
+      Nuevo Post
+    </li>
   </ul>
 </nav>
 <section class="container">
 <router-outlet></router-outlet>
 </section>
+<footer class="footer">
+   <div class="container" >
+        <div>
+          <p>&copy; BlogTravel Company</p>
+        </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="" title="facebook">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="" title="facebook">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="" title="facebook">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+</footer>
 </div>
 
