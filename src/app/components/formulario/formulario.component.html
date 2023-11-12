@@ -1,28 +1,32 @@
 <form [formGroup]="newPost" (ngSubmit)="onSubmit()">
+    <div class="row g-2">
     <div>
-        <label for="">Categoria</label>
-        <input type="text" formControlName="categoria">
+        <label class="form-label" for="">Categoria</label>
+        <input class="form-control" type="text" formControlName="categoria">
+    </div>
+   
+    <div>
+        <label class="form-label">Titulo</label>
+        <input class="form-control" type="text" formControlName="titulo">
     </div>
     <div>
-        <label for="">Fecha</label>
-        <input type="text" formControlName="fecha">
+        <label class="form-label">Imagen</label>
+        <input class="form-control" type="text" formControlName="imagen">
     </div>
     <div>
-        <label for="">Autor</label>
-        <input type="text" formControlName="autor">
+        <label class="form-label">Texto</label>
+        <textarea class="form-control" formControlName="texto" cols="30" rows="10"></textarea>
     </div>
-    <div>
-        <label for="">Titulo</label>
-        <input type="text" formControlName="titulo">
+     <div class="col">
+        <label class="form-label">Fecha</label>
+        <input class="form-control" type="text" formControlName="fecha">
     </div>
-    <div>
-        <label for="">Imagen</label>
-        <input type="text" formControlName="imagen">
+    <div class="col">
+        <label class="form-label">Autor</label>
+        <input class="form-control"  type="text" formControlName="autor">
     </div>
-    <div>
-        <label for="">Texto</label>
-        <input type="text" formControlName="texto">
     </div>
-    <input class="btn btn-info" type="submit" value="Publicar post">
+  
+    <input class="btn btn-info mt-3" type="submit" value="Publicar post">
 
 </form>
