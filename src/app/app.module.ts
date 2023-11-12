@@ -7,18 +7,26 @@ import { ListaPostsComponent } from './pages/lista-posts/lista-posts.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { DataPickerComponent } from './components/data-picker/data-picker.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaPostsComponent,
-    FormularioComponent
+    FormularioComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    DataPickerComponent,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

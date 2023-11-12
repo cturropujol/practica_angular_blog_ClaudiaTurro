@@ -1,30 +1,49 @@
 <form [formGroup]="newPost" (ngSubmit)="onSubmit()">
     <div class="row g-2">
-    <div>
+        <h3>Sube una nueva publicación</h3>
+        <p>Sigue los pasos y rellena los campos para poder cargar una nueva publicación.</p>
+
+    <div class="categoria">
         <label class="form-label" for="">Categoria</label>
-        <input class="form-control" type="text" formControlName="categoria">
+        <select class="form-select" formControlName="categoria">
+            <option selected>Clasifica tu post segun el continente</option>
+            <option value="africa">Africa</option>
+            <option value="america">America</option>
+            <option value="antartida">Antartida</option>
+            <option value="asia">Asia</option>
+            <option value="europa">Europa</option>
+            <option value="oceania">Oceania</option>
+        </select>
     </div>
-   
-    <div>
-        <label class="form-label">Titulo</label>
-        <input class="form-control" type="text" formControlName="titulo">
+   <div class="imagen">
+        <label class="form-label">
+            Escoge una portada para tu publicación.
+            <p>La imagen la puedes cargar a traves de un link o subir el archivo desde tu equipo.</p>
+        </label>
+        <div class="input-group" formControlName="imagen">
+            <div class="input-group col-lg row-sm">
+                <span class="input-group-text" id="basic-addon1">url imagen</span>
+                <input type="text" class="form-control" placeholder="Pon el link de tu imagen" aria-describedby="basic-addon1">
+            </div>
+            <div class="col-lg row-sm">
+                <input type="file" class="form-control mx-2" placeholder="Carga una imagen desde tu equipo">
+            </div>
+        </div>
     </div>
-    <div>
-        <label class="form-label">Imagen</label>
-        <input class="form-control" type="text" formControlName="imagen">
+    <div class="my-5">
+        <input class="form-control mb-2" type="text" formControlName="titulo" placeholder="Titulo para la publicación">
+        <textarea class="form-control" formControlName="texto" cols="30" rows="10" placeholder="Escribe aqui el texto de tu publicación"></textarea>
     </div>
-    <div>
-        <label class="form-label">Texto</label>
-        <textarea class="form-control" formControlName="texto" cols="30" rows="10"></textarea>
-    </div>
-     <div class="col">
-        <label class="form-label">Fecha</label>
-        <input class="form-control" type="text" formControlName="fecha">
-    </div>
-    <div class="col">
+    <div class="col-lg row-sm">
         <label class="form-label">Autor</label>
         <input class="form-control"  type="text" formControlName="autor">
     </div>
+    <div class="col-lg row-sm">
+        <data-picker formControlName="fecha">
+        </data-picker>
+        
+    </div>
+    
     </div>
   
     <input class="btn btn-info mt-3" type="submit" value="Publicar post">

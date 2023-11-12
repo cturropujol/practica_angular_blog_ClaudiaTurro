@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostsService } from 'src/app/services/posts.service';
 
+
+
 @Component({
   selector: 'formulario',
   templateUrl: './formulario.component.html',
