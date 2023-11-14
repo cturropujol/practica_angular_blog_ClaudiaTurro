@@ -1,1 +1,22 @@
-<p>post-card works!</p>
+<article class="post">
+    <h3>{{post.titulo}}</h3>
+    <hr noshade="noshade">
+    <div class="flex">
+        <p>{{post.categoria}}</p>
+        <p>{{post.fecha}}</p>
+    </div>
+    <figure>
+        <img [src]="post.imagen">
+    </figure>
+    <p class="autor">{{post.autor}}</p>
+    <p>{{post.texto}}</p>
+    <div class="seguiLeyendo">
+    <hr noshade="noshade">
+    </div>
+    <div >
+        <p class="boton">Seguir Leyendo</p>
+    </div>
+    
+
+</article>
+

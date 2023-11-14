@@ -5,14 +5,6 @@
         
     </select>
 </div>
-<article *ngFor="let post of arrPosts">
-    <figure>
-        <img [src]="post.imagen">
-    </figure>
-    <p>{{post.fecha}}</p>
-    <p>{{post.autor}}</p>
-    <h3>{{post.titulo}}</h3>
-    <p>{{post.texto}}</p>
-    <p>{{post.categoria}}</p>
-
-</article>
+<section class="posts">
+    <app-post-card *ngFor="let post of arrPosts" [post]="post"></app-post-card>
+</section>
