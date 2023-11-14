@@ -1,0 +1,25 @@
+.hero{
+    background-image: url('./images/background_hero.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 45vh;
+    margin-bottom: 50px;
+
+}
+
+.hero ul{
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 50px;
+    & li{
+        padding-right: 30px;
+        &:hover{
+            cursor: pointer;
+            color: #ebdbc4;
+            text-decoration:wavy;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.footer{
+background-color: #D7BF9D;
+padding: 20px;
+
+}
+.footer .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .container div p{
+    color: #af9c80;
+}
+
+
+.footer .container nav ul li{
+    display: inline-block;
+    padding-left: 5px;
+    & a{
+        background-color: #af9c80;
+        text-decoration: none;
+        font-size: 160%;
+        color: #D7BF9D;
+        padding: 5px 8px;
+        border-radius: 80%;
+         &:hover{
+        color: #ebdbc4;
+    }   
+    }
+}

@@ -9,13 +9,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { DataPickerComponent } from './components/data-picker/data-picker.component'
+import { DataPickerComponent } from './components/data-picker/data-picker.component';
+import { PostCardComponent } from './components/post-card/post-card.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaPostsComponent,
     FormularioComponent,
+    PostCardComponent,
+    HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [
