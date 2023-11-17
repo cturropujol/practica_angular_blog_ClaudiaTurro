@@ -6,7 +6,7 @@
     <div class="categoria">
         <label class="form-label" for="">Categoria</label>
         <select class="form-select" formControlName="categoria">
-            <option selected>Clasifica tu post segun el continente</option>
+            <option selected >Clasifica tu post segun el continente</option>
             <option value="africa">Africa</option>
             <option value="america">America</option>
             <option value="antartida">Antartida</option>
@@ -20,32 +20,49 @@
             Escoge una portada para tu publicación.
             <p>La imagen la puedes cargar a traves de un link o subir el archivo desde tu equipo.</p>
         </label>
-        <div class="input-group" formControlName="imagen">
+        <div class="input-group" >
             <div class="input-group col-lg row-sm">
                 <span class="input-group-text" id="basic-addon1">url imagen</span>
-                <input type="text" class="form-control" placeholder="Pon el link de tu imagen" aria-describedby="basic-addon1">
-            </div>
-            <div class="col-lg row-sm">
-                <input type="file" class="form-control mx-2" placeholder="Carga una imagen desde tu equipo">
+                <input type="text" class="form-control" placeholder="Pon el link de tu imagen" aria-describedby="basic-addon1" formControlName="imagen">
             </div>
         </div>
+        <p class="error" *ngIf="checkError('imagen', 'required')">
+        Este campo es obligatorio.
+        </p>
     </div>
     <div class="my-5">
         <input class="form-control mb-2" type="text" formControlName="titulo" placeholder="Titulo para la publicación">
-        <textarea class="form-control" formControlName="texto" cols="30" rows="10" placeholder="Escribe aqui el texto de tu publicación"></textarea>
+        <p class="error" *ngIf="checkError('titulo', 'required')">
+        Este campo es obligatorio.
+        </p>
+        <p-editor [style]="{ height: '420px' }" formControlName="texto" ></p-editor>
+        <p class="error" *ngIf="checkError('texto', 'required')">
+        Este campo es obligatorio.
+        </p>
+       
+        
     </div>
     <div class="col-lg row-sm">
         <label class="form-label">Autor</label>
         <input class="form-control"  type="text" formControlName="autor">
+        <p class="error" *ngIf="checkError('autor', 'required')">
+        Este campo es obligatorio.
+        </p>
     </div>
-    <div class="col-lg row-sm">
-        <data-picker formControlName="fecha">
-        </data-picker>
+    <div>
+        <mat-form-field color="primary" class="calendario">
+        <!-- <mat-label>Escoge fecha de publicación</mat-label> -->
+        <input matInput [matDatepicker]="picker" formControlName="fecha">
+        <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
         
     </div>
     
+    
     </div>
   
-    <input class="btn btn-info mt-3" type="submit" value="Publicar post">
+    <input class="btn btn-info my-3" type="submit" value="Publicar post">
 
 </form>

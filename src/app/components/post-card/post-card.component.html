@@ -9,7 +9,7 @@
         <img [src]="post.imagen">
     </figure>
     <p class="autor">{{post.autor}}</p>
-    <p>{{post.texto}}</p>
+    <p [innerHTML]="post.texto"></p>
     <div class="seguiLeyendo">
     <hr noshade="noshade">
     </div>

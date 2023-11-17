@@ -1,5 +1,6 @@
+import { DatePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -14,21 +15,43 @@ export class FormularioComponent {
 
   newPost: FormGroup;
   postsService = inject(PostsService);
-  router = inject(Router)
+  router = inject(Router);
+  datePipe = inject(DatePipe);
 
   constructor(){
     this.newPost = new FormGroup ({
-      titulo: new FormControl(),
-      texto: new FormControl(),
-      autor: new FormControl(),
-      imagen: new FormControl(),
-      fecha: new FormControl(),
-      categoria: new FormControl(),
+      titulo: new FormControl(null, [
+        Validators.required
+      ]),
+      texto: new FormControl(null, [
+        Validators.required
+      ]),
+      autor: new FormControl(null, [
+        Validators.required
+      ]),
+      imagen: new FormControl(null, [
+        Validators.required
+      ]),
+      fecha: new FormControl(new Date(), [
+        Validators.required
+      ]),
+      categoria: new FormControl(null, [
+        Validators.required
+      ]),
     })
   }
 
   onSubmit(){
+    const fechaAlmacenada = this.newPost.get('fecha');
+    if (fechaAlmacenada){
+    const fechaFormateada = this.datePipe.transform(fechaAlmacenada.value, 'dd MMMM yyyy');
+    this.newPost.get('fecha')?.setValue(fechaFormateada);
+      }
     this.postsService.createPost(this.newPost.value);
     this.router.navigate(['/posts'])
+  }
+
+  checkError(controlName: string, errorName: string){
+    return this.newPost.get(controlName)?.hasError(errorName) && this.newPost.get(controlName)?.touched;
   }
 }
