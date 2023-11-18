@@ -1,12 +1,15 @@
 <form [formGroup]="newPost" (ngSubmit)="onSubmit()">
-    <div class="row g-2">
-        <h3>Sube una nueva publicación</h3>
-        <p>Sigue los pasos y rellena los campos para poder cargar una nueva publicación.</p>
-
-    <div class="categoria">
+    <div class="header">
+        <h3>Crear una nueva publicación</h3>
+        <p>Para subir una publicación debes rellenar todos los campos con los datos solicitados.
+            <br>
+            Las publicaciones se organizan por continentes, por lo que categoriza correctamente tu publicación.</p>
+        </div>
+    <div class="formulario col-8 offset-2">
+    <div class="categoria mb-3">
         <label class="form-label" for="">Categoria</label>
         <select class="form-select" formControlName="categoria">
-            <option selected >Clasifica tu post segun el continente</option>
+            <option selected>Clasifica tu post segun el continente</option>
             <option value="africa">Africa</option>
             <option value="america">America</option>
             <option value="antartida">Antartida</option>
@@ -14,55 +17,59 @@
             <option value="europa">Europa</option>
             <option value="oceania">Oceania</option>
         </select>
+
     </div>
-   <div class="imagen">
-        <label class="form-label">
-            Escoge una portada para tu publicación.
-            <p>La imagen la puedes cargar a traves de un link o subir el archivo desde tu equipo.</p>
-        </label>
-        <div class="input-group" >
-            <div class="input-group col-lg row-sm">
-                <span class="input-group-text" id="basic-addon1">url imagen</span>
-                <input type="text" class="form-control" placeholder="Pon el link de tu imagen" aria-describedby="basic-addon1" formControlName="imagen">
-            </div>
-        </div>
-        <p class="error" *ngIf="checkError('imagen', 'required')">
-        Este campo es obligatorio.
-        </p>
-    </div>
-    <div class="my-5">
-        <input class="form-control mb-2" type="text" formControlName="titulo" placeholder="Titulo para la publicación">
-        <p class="error" *ngIf="checkError('titulo', 'required')">
-        Este campo es obligatorio.
-        </p>
-        <p-editor [style]="{ height: '420px' }" formControlName="texto" ></p-editor>
-        <p class="error" *ngIf="checkError('texto', 'required')">
-        Este campo es obligatorio.
-        </p>
-       
-        
-    </div>
-    <div class="col-lg row-sm">
+    <div class="mb-3">
         <label class="form-label">Autor</label>
         <input class="form-control"  type="text" formControlName="autor">
         <p class="error" *ngIf="checkError('autor', 'required')">
         Este campo es obligatorio.
         </p>
     </div>
-    <div>
+    <div class="mb-3">
+        <label class="form-label">Fecha de publicación</label>
         <mat-form-field color="primary" class="calendario">
-        <!-- <mat-label>Escoge fecha de publicación</mat-label> -->
-        <input matInput [matDatepicker]="picker" formControlName="fecha">
-        <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+        <mat-label>Escoge otra fecha si no quieres publicar hoy</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha" >
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         
     </div>
+   <div class="imagen mb-3">
+        <label class="form-label">
+            Escoge una portada para tu publicación.
+        </label>
+        <div class="input-group" >
+            <div class="input-group col-lg row-sm">
+                <span class="input-group-text" id="basic-addon1">url</span>
+                <input type="text" class="form-control" placeholder="Pega el link de tu imagen" aria-describedby="basic-addon1" formControlName="imagen">
+            </div>
+        </div>
+        <p class="error" *ngIf="checkError('imagen', 'required')">
+        Este campo es obligatorio.
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Titulo</label>
+        <input class="form-control" type="text" formControlName="titulo" placeholder="Titulo para la publicación">
+        <p class="error" *ngIf="checkError('titulo', 'required')">
+        Este campo es obligatorio.
+        </p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Texto</label>
+        <p-editor [style]="{ height: '420px' }" formControlName="texto" placeholder="Escribe aqui tu publicación" ></p-editor>
+        <p class="error" *ngIf="checkError('texto', 'required')">
+        Este campo es obligatorio.
+        </p>
+    </div>
     
     
+    <input class="btn btn-info" type="submit" value="Publicar post" >
+    <p class="text-danger" *ngIf="!newPost.valid && submited">**Tienes campos pendientes de rellenar**</p>
     </div>
   
-    <input class="btn btn-info my-3" type="submit" value="Publicar post">
+    
 
 </form>
