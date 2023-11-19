@@ -17,6 +17,7 @@ import { FooterComponent } from './Shared/Components/footer/footer.component'
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule, DatePipe } from '@angular/common';
 import { DetallePostComponent } from './pages/detalle-post/detalle-post.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DetallePostComponent } from './pages/detalle-post/detalle-post.componen
     HeaderComponent,
     FooterComponent,
     DetallePostComponent,
+    SideBarComponent,
     
     
   ],

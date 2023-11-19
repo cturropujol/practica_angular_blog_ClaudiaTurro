@@ -58,6 +58,13 @@
         </p>
     </div>
     <div class="mb-3">
+        <label class="form-label">Entradilla</label>
+        <textarea class="form-control" formControlName="subtitulo" placeholder="Escribe una entradilla para la publicación" cols="30" rows="4"></textarea>
+        <p class="error" *ngIf="checkError('subtitulo', 'required')">
+        Este campo es obligatorio.
+        </p>
+    </div>
+    <div class="mb-3">
         <label class="form-label">Texto</label>
         <p-editor [style]="{ height: '420px' }" formControlName="texto" placeholder="Escribe aqui tu publicación" ></p-editor>
         <p class="error" *ngIf="checkError('texto', 'required')">

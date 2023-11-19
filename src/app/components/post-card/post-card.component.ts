@@ -10,10 +10,11 @@ export class PostCardComponent {
 
   @Input() post:Post;
   @Input() detalle: boolean = false;
+  @Input() botonActivo: boolean = true;
 
   constructor(){
     this.post = {
-      id: 0, titulo: '', texto: '', autor: '', imagen: '', fecha: '', categoria: '',
+      id: 0, titulo: '', subtitulo:'', texto: '', autor: '', imagen: '', fecha: '', categoria: '',
     }
   }
 

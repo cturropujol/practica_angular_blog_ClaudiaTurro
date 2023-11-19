@@ -1,28 +1,6 @@
 
-<div *ngIf="postSeleccionado">
+<div *ngIf="postSeleccionado" >
     
-<app-post-card [post]="postSeleccionado" [detalle]="true">
-    <!-- <article class="card post">
-    <h3 class="card-title">{{post.titulo}}</h3>
-    <hr noshade="noshade">
-    <div class="flex categoria">
-        <p>{{post.categoria}}</p>
-        <p>{{post.fecha}}</p>
-    </div>
-    <figure>
-        <img class="card-img" [src]="post.imagen">
-    </figure>
-    <p class="card-text text-muted autor">{{post.autor}}</p>
-    <p class="card-text" [innerHTML]="post.texto"></p>
-    <div class="seguiLeyendo">
-    <hr noshade="noshade">
-    </div>
-    <div >
-        <p class="boton" [routerLink]="['/post', post.id]">Seguir Leyendo</p>
-    </div>
-    
-
-</article> -->
-</app-post-card>
+<app-post-card class="detalle" [post]="postSeleccionado" [detalle]="true" [botonActivo]="false"></app-post-card>
 </div>
 

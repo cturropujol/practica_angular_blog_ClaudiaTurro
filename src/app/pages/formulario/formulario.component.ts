@@ -30,6 +30,9 @@ export class FormularioComponent {
       titulo: new FormControl(null, [
         Validators.required
       ]),
+      subtitulo: new FormControl(null, [
+        Validators.required
+      ]),
       texto: new FormControl(null, [
         Validators.required
       ]),
