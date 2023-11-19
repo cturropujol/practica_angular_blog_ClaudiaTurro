@@ -12,7 +12,7 @@ export class PostCardComponent {
 
   constructor(){
     this.post = {
-      titulo: '', texto: '', autor: '', imagen: '', fecha: '', categoria: '',
+      id: 0, titulo: '', texto: '', autor: '', imagen: '', fecha: '', categoria: '',
     }
   }
 

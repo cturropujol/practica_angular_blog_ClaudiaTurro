@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Post } from 'src/app/interfaces/post';
+import { CategoriasService } from 'src/app/services/categorias.service';
 import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class ListaPostsComponent {
   arrCategorias: string[] = [];
 
   postsService = inject(PostsService);
+  categoriaService = inject(CategoriasService)
 
   ngOnInit(){
     this.arrPosts = this.postsService.getAll();

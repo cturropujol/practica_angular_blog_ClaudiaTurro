@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CategoriasService } from 'src/app/services/categorias.service';
 import { PostsService } from 'src/app/services/posts.service';
 
 
@@ -13,11 +14,16 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class FormularioComponent {
 
-  newPost: FormGroup;
+  
   postsService = inject(PostsService);
+  categoriasService = inject(CategoriasService);
   router = inject(Router);
   datePipe = inject(DatePipe);
+
+  newPost: FormGroup;
   submited = false;
+  arrCategorias: string[] = [];
+
 
   constructor(){
     this.newPost = new FormGroup ({
@@ -42,8 +48,13 @@ export class FormularioComponent {
     })
   }
 
+  ngOnInit(){
+    this.arrCategorias= this.categoriasService.getAll();
+  }
+
   onSubmit(){
     this.submited = true;
+    
     if(this.newPost.valid){
     const fechaAlmacenada = this.newPost.get('fecha');
     if (fechaAlmacenada){
@@ -51,7 +62,8 @@ export class FormularioComponent {
     this.newPost.get('fecha')?.setValue(fechaFormateada);
       }
     this.postsService.createPost(this.newPost.value);
-    this.router.navigate(['/posts'])
+   this.router.navigate(['/posts'])
+   console.log(this.newPost.value)
     } else {
       this.newPost.invalid;
     }
@@ -60,7 +72,7 @@ export class FormularioComponent {
   checkError(controlName: string, errorName: string){
     const control = this.newPost.get(controlName) as AbstractControl;
     return control?.hasError(errorName) && (control?.touched || this.submited);
-    return this.newPost.get(controlName)?.hasError(errorName) && this.newPost.get(controlName)?.touched;
+    // return this.newPost.get(controlName)?.hasError(errorName) && this.newPost.get(controlName)?.touched;
   }
 
   
