@@ -13,6 +13,7 @@
         
     </section>
     <aside class="col">
-        <app-side-bar></app-side-bar>
+           <h3>Últimas Publicaciones</h3>
+        <app-side-bar class="ultimosPosts" *ngFor="let post of arrLastsPosts" [post]="post"></app-side-bar>
     </aside>
 </div>

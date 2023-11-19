@@ -1,0 +1,20 @@
+
+.card{
+  --bs-card-spacer-y: 0.5rem;
+  --bs-card-spacer-x: 0.5rem;
+  margin-bottom: 20px;
+  color: var(--color-font);
+    width: 260px;
+    & h6{
+        font-size: 13px;
+        font-weight: 400;
+        
+    }
+    &  p{
+        font-size: 12px;
+        opacity: 0.4;
+        margin-bottom: 0;
+        text-align: end;
+    }
+    
+} 

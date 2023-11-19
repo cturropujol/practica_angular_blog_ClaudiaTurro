@@ -14,6 +14,7 @@ export class ListaPostsComponent {
   
   arrPosts: Post[] = [];
   arrCategorias: string[] = [];
+  arrLastsPosts: Post[] = [];
   categoriaSeleccionada!:string;
   tituloCategoria: string = '';
 
@@ -24,8 +25,9 @@ export class ListaPostsComponent {
 
 
   ngOnInit(){
-    this.arrPosts = this.postsService.getAll().reverse();
+    this.arrPosts = this.postsService.getAll();
     this.arrCategorias = this.postsService.getCategoria();
+    this.arrLastsPosts = this.postsService.getLastsPosts().reverse();
     this.activatedRoute.params.subscribe(params => {
       this.categoriaSeleccionada = params['categoria'];
       

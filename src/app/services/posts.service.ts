@@ -102,5 +102,9 @@ export class PostsService {
   getById(postId: number): Post |undefined {
     return POSTS.find(post => post.id === postId)
   }
+  
+  getLastsPosts(): Post[] {
+    return POSTS.slice(POSTS.length -3, POSTS.length)
+  }
 
 }

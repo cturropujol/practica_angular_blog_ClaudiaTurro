@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Post } from 'src/app/interfaces/post';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent {
+  @Input() post:Post;
+  
+
+  constructor(){
+    this.post = {
+      id: 0, titulo: '', subtitulo:'', texto: '', autor: '', imagen: '', fecha: '', categoria: '',
+    }
+  }
 
 }
