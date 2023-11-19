@@ -1,15 +1,15 @@
-<article class="post">
-    <h3>{{post.titulo}}</h3>
+<article class="card post">
+    <h3 class="card-title">{{post.titulo}}</h3>
     <hr noshade="noshade">
     <div class="flex">
         <p>{{post.categoria}}</p>
         <p>{{post.fecha}}</p>
     </div>
     <figure>
-        <img [src]="post.imagen">
+        <img class="card-img" [src]="post.imagen">
     </figure>
-    <p class="autor">{{post.autor}}</p>
-    <p [innerHTML]="post.texto"></p>
+    <p class="card-text text-muted autor">{{post.autor}}</p>
+    <p class="card-text" [innerHTML]="post.texto"></p>
     <div class="seguiLeyendo">
     <hr noshade="noshade">
     </div>
