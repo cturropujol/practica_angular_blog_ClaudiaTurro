@@ -1,10 +1,18 @@
-<div>
-    <select class="form-select form-select-sm" (change)="filtrarContinente($event)">
-        <option value="filtrar por categoria">Filtrar por categoria</option>
-        <option *ngFor="let categoria of arrCategorias">{{categoria}}</option>
+
+    <div class="selectorCategoria">
+        <select class="form-select" (change)="filtrarContinente($event)">
+            <option value="filtrar por categoria">Filtrar por categoria</option>
+            <option *ngFor="let categoria of arrCategorias">{{categoria}}</option>
+            
+        </select>
+    </div>
+<div class="row">
+    <section class="posts col-8">
+        <h2>{{tituloCategoria}}</h2>
+        <app-post-card *ngFor="let post of arrPosts" [post]="post" style="width: 50rem;"></app-post-card>
         
-    </select>
+    </section>
+    <aside class="col">
+        <app-side-bar></app-side-bar>
+    </aside>
 </div>
-<section class="posts">
-    <app-post-card *ngFor="let post of arrPosts" [post]="post" style="width: 50rem;"></app-post-card>
-</section>

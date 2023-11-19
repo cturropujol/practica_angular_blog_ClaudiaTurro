@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CommonModule, DatePipe } from '@angular/common';
 import { DetallePostComponent } from './pages/detalle-post/detalle-post.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     FooterComponent,
     DetallePostComponent,
     SideBarComponent,
+    HomeComponent,
     
     
   ],

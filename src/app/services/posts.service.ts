@@ -91,6 +91,9 @@ export class PostsService {
   getCategoria(): string[]{
     return [...new Set(POSTS.map(post => post.categoria))];
   }
+  getImg(): string[]{
+    return [...(POSTS.map(post => post.imagen))];
+  }
 
   getByCategoria(categoria: string): Post[]{
     return POSTS.filter(post => post.categoria === categoria)
