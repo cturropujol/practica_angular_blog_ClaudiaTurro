@@ -9,6 +9,7 @@ import { Post } from 'src/app/interfaces/post';
 export class PostCardComponent {
 
   @Input() post:Post;
+  @Input() detalle: boolean = false;
 
   constructor(){
     this.post = {

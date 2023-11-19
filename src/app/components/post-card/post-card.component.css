@@ -27,7 +27,12 @@
     & p:first-child{
         background-color: #D6C7AE;
         color: white;
+        text-transform: uppercase;
         padding:1px 8px;
+    }
+    & p:last-child{
+        text-transform: uppercase;
+        
     }
 }
 

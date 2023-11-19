@@ -1,4 +1,8 @@
-<article class="card post">
+
+<div *ngIf="postSeleccionado">
+    
+<app-post-card [post]="postSeleccionado" [detalle]="true">
+    <!-- <article class="card post">
     <h3 class="card-title">{{post.titulo}}</h3>
     <hr noshade="noshade">
     <div class="flex categoria">
@@ -10,7 +14,6 @@
     </figure>
     <p class="card-text text-muted autor">{{post.autor}}</p>
     <p class="card-text" [innerHTML]="post.texto"></p>
-    <p *ngIf="detalle">texto para ver en mas detalle</p>
     <div class="seguiLeyendo">
     <hr noshade="noshade">
     </div>
@@ -19,5 +22,7 @@
     </div>
     
 
-</article>
+</article> -->
+</app-post-card>
+</div>
 

@@ -96,4 +96,8 @@ export class PostsService {
     return POSTS.filter(post => post.categoria === categoria)
   }
 
+  getById(postId: number): Post |undefined {
+    return POSTS.find(post => post.id === postId)
+  }
+
 }
