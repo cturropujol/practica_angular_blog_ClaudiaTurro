@@ -9,16 +9,13 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class HomeComponent {
 
-  arrPosts: Post[] = [];
-  arrCategorias: string[] = [];
-  arrImg: string[] = [];
+  lastPost: Post | undefined;
+
   
 
   postsService = inject(PostsService);
 
   ngOnInit(){
-    this.arrImg = this.postsService.getImg();
-    console.log(this.arrImg)
+    this.lastPost = this.postsService.getLast();
   }
-
 }

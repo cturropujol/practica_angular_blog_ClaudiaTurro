@@ -1,23 +1,16 @@
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" >
-        <a >
-        <img src="https://images.unsplash.com/photo-1611693196679-c1f358840cc6?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100">
-      </a>
+
+<!-- <div *ngIf="lastPost">
+<app-post-card  [post]="lastPost" style="width: 50rem;" ></app-post-card>
+</div> -->
+<div class="mb-5" >
+<div *ngIf="lastPost" class="card bg-dark text-white" [routerLink]="['/post', lastPost.id]">
+    <img class="card-img" [src]="lastPost.imagen" alt="Card image">
+    <div class="card-img-overlay">
+        <h5 class="card-title">Last Post</h5>
+        <p class="card-text">{{lastPost.titulo}}</p>
+        <p class="card-text">{{lastPost.fecha}}</p>
     </div>
-    <div class="carousel-item" *ngFor="let img of arrImg">
-      <!-- Envuelve la imagen en un enlace con routerLink -->
-      <a >
-        <img [src]="img" class="d-block w-100">
-      </a>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+</div>
+
+
 </div>

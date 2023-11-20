@@ -1,5 +1,6 @@
 .post{
-    padding: 20px;
+    padding: 1.25rem;
+    margin-bottom: 4.5rem;
 
     
     & h3{
@@ -11,7 +12,7 @@
         width: 10%;
         height: 2px;
         background-color: #B3A492;
-        margin: 20px auto;
+        margin: 1.25rem auto;
         border: none
     }
 }
@@ -24,7 +25,7 @@
     flex-direction: row;
     justify-content: center;
     gap: var(--gap);
-    padding-bottom: 15px;
+    padding-bottom: 0.9375rem;
     font-size: 14px;
     & p:first-child{
         background-color: #D6C7AE;
@@ -59,7 +60,7 @@
     position: absolute;
     width: 50%;
     text-align: center;
-    right: 20px;
+    right: 1.25rem;
 }
 
 .btn{

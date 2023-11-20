@@ -6,14 +6,16 @@
             
         </select>
     </div>
-<div class="row">
-    <section class="posts col-8">
+<div class="contenido row justify-content-around">
+    <section class="posts col-12 col-sm-6 col-md-8">
         <h2>{{tituloCategoria}}</h2>
-        <app-post-card *ngFor="let post of arrPosts" [post]="post" style="width: 50rem;"></app-post-card>
+        <app-post-card *ngFor="let post of arrPosts" [post]="post" style="width: 50rem;" ></app-post-card>
         
     </section>
-    <aside class="col">
-           <h3>Últimas Publicaciones</h3>
-        <app-side-bar class="ultimosPosts" *ngFor="let post of arrLastsPosts" [post]="post"></app-side-bar>
-    </aside>
+    <section class="aside col-12 col-md-2">
+           <h3>Últimas Publicaciones</h3> 
+            <app-side-bar class="ultimosPosts" *ngFor="let post of arrLastsPosts" [post]="post"></app-side-bar>
+    </section>
 </div>
+
+<!--  -->
