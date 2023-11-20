@@ -65,7 +65,7 @@ export class FormularioComponent {
     this.newPost.get('fecha')?.setValue(fechaFormateada);
       }
     this.postsService.createPost(this.newPost.value);
-   this.router.navigate(['/posts'])
+   this.router.navigate(['/home'])
    console.log(this.newPost.value)
     } else {
       this.newPost.invalid;

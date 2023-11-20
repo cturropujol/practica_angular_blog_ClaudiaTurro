@@ -1,0 +1,28 @@
+.card {
+  --bs-card-border-color: none;
+
+  & h5{
+    display: inline;
+    padding: 2px 4px;
+    border-radius: 5px;
+    background-color: #b1b490;
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    }
+  & h6{
+    padding-top: 10px;
+    font-size: 18px;
+    color: var(--color-font)
+  }
+  & p:nth-child(3){
+    color: var(--color-font);
+    font-size: 13px;
+    width: 50%;
+  }
+  & p:nth-child(4){
+    color: rgb(166, 166, 166);
+    font-size: 12px;
+  }
+ 
+}
